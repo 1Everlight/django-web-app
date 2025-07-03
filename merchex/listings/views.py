@@ -10,7 +10,7 @@ from listings.models import Listing
 # Creating view hello to affiche first testing of our code
 def hello(request):
     bands = Band.objects.all()
-    return render(request,'listings/hello.html', {'bands':bands})
+    return render(request,'listings/hello.html',context = {'bands':bands})
 
 
 # Creating about us view which show page containing information concerning us
@@ -21,26 +21,7 @@ def about(request):
 # Creating view listings to list things of our application
 def listings(request):
     listings = Listing.objects.all()
-    return HttpResponse(
-                        f"""<html>
-                            <head>
-                                <title>merchex</title>
-                            </head>
-                            <body>
-                                <h1>Voici la liste !</h1>
-                                <p>
-                                concentrez vous,je suis sur le point de vous presenter l'inoubliable !
-                                </p>
-                                <ul>
-                                <li>{listings[0].title}</li>
-                                <li>{listings[1].title}</li>
-                                <li>{listings[2].title}</li>
-                                </ul>
-                            </body>
-                            </html>
-                            """
-    )
-
+    return render(request, 'listings/listings.html', context = {'listings':listings})
 
 # Creating view contact-us to create a formular for those who want to contact us
 def contact(request):
