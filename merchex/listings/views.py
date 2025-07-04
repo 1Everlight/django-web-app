@@ -7,18 +7,16 @@ from listings.models import Listing
 # Create your views here.
 
 
-
-#Creating view for group detail showing
+# Creating view for group detail showing
 def band_detail(request, id):  # notez le paramètre id supplémentaire
-   return render(request,
-          'listings/band_detail.html',
-         {'id':id})
+    band = Band.objects.get(id=id)
+    return render(request, "listings/band_detail.html", {"band": band})
 
 
 # Creating view hello to affiche first testing of our code
 def band_list(request):
     bands = Band.objects.all()
-    return render(request,'listings/band_list.html',context = {'bands':bands})
+    return render(request, "listings/band_list.html", context={"bands": bands})
 
 
 # Creating about us view which show page containing information concerning us
@@ -29,7 +27,8 @@ def about(request):
 # Creating view listings to list things of our application
 def listings(request):
     listings = Listing.objects.all()
-    return render(request, 'listings/listings.html', context = {'listings':listings})
+    return render(request, "listings/listings.html", context={"listings": listings})
+
 
 # Creating view contact-us to create a formular for those who want to contact us
 def contact(request):
