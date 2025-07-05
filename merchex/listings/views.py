@@ -29,6 +29,10 @@ def listings(request):
     listings = Listing.objects.all()
     return render(request, "listings/listings.html", context={"listings": listings})
 
+def listings_detail(request, id):
+    listings = Listing.objects.get(id = id)
+    return render(request, "listings/listings_detail.html", context={"listings": listings})
+
 
 # Creating view contact-us to create a formular for those who want to contact us
 def contact(request):
