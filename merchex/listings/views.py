@@ -27,11 +27,11 @@ def about(request):
 # Creating view listings to list things of our application
 def listings(request):
     listings = Listing.objects.all()
-    return render(request, "listings/listings.html", context={"listings": listings})
+    return render(request, "listings/listings.html",{"listings": listings})
 
 def listings_detail(request, id):
-    listings = Listing.objects.get(id = id)
-    return render(request, "listings/listings_detail.html", context={"listings": listings})
+    listing = Listing.objects.get(id = id)
+    return render(request, "listings/listings_detail.html",{"listing": listing})
 
 
 # Creating view contact-us to create a formular for those who want to contact us
