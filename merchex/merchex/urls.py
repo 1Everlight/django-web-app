@@ -29,5 +29,6 @@ urlpatterns = [
     path("contact-us/", views.contact),
     path("email-sent/", views.Email_envoyer, name='email-sent'),
     path("bands/add/", views.band_create, name='band-create'),
-    path("bands/<int:id>/update", views.band_update, name='band-update')
+    path("bands/<int:id>/update", views.band_update, name='band-update'),
+    path("bands/<int:id>/delete", views.banf_delete, name='band-delete')
 ]
