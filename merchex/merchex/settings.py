@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+# pour avoir les mail envoyer par django dans le terminal
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 from pathlib import Path
 
@@ -102,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
+
 
 LANGUAGE_CODE = "en-us"
 

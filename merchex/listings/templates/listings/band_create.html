@@ -1,0 +1,15 @@
+{% extends 'listings/base.html' %}
+
+
+{% block content %}
+
+<h1>C'est pour ajouter ? Remplissez le formulaire ci-dessous</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" Envoyer>
+</form>
+
+
+
+{% endblock %}

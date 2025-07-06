@@ -1,0 +1,16 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<a href="{% url 'band-list' %}">Groupes</a>   <a href="{% url 'listings-list' %}">Listes</a>
+
+<p>Nous somme là pour vous servir !</p>
+
+<form action="" method="post" novalidate>
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Envoyer">
+
+</form>
+
+
+{% endblock %}
