@@ -83,3 +83,10 @@ def band_create(request):
     return render(request,
             'listings/band_create.html',
             {'form': form})
+    
+    
+def band_update(request, id):
+    band = Band.objects.get(id=id)
+    form = forms.BandForm(instance=band)
+    return render(request, 'listings/band_update.html', {'form':form})
+    
